@@ -1,6 +1,9 @@
 # Factura Com Librería
 
 Librería Python para interactuar con la API de Factura.com.
+Hay que registrarse en el sitio web de factura.com para poder obtener el API_KEY y SECRET_KEY.
+
+Más detalles en [Factura.com](https://factura.com/)
 ## Instalación
 
 Puedes instalar la librería utilizando pip:
@@ -21,12 +24,11 @@ live_url = "https://api.factura.com/api/v4"
 
 client = FacturaComClient(api_key, secret_key, url=sandbox_url)
 ```
-
 Utilizar la url sandbox para hacer pruebas ó live para producción.
 
 ### Obtener una lista de facturas
 ```python
-from factura_com.api.client import FacturaComClient
+from factura_com.api import FacturaComClient
 
 api_key = "TU_API_KEY"
 secret_key = "TU_SECRET_KEY"
@@ -137,7 +139,7 @@ pdf_data = client.get_invoice_pdf(cfdi_uuid='55c0fdc67593d')
 ### Obtener el XML de una factura
 ```python
 # Obtener el XML de una factura por su UID ó UUID
-pdf_data = client.get_invoice_pdf(cfdi_uuid='55c0fdc67593d')
+xml_data = client.get_invoice_xml(cfdi_uuid='55c0fdc67593d')
 ```
 
 ### Cancelar una factura
